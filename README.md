@@ -5,10 +5,15 @@ An Open Source FAQ Board
 # development 
 
 1. Fork This Repo 
+
 2. Clone your Fork Locally 
+
 	`git clone git@github.com:$username/openfaqs.git`
+
 3. Set Up Remote Repo 
+
 	`git remote add upstream git@github.com:Bit-Monkeys/openfaqs.git`
+
 4. Sync your Fork  
 	
 	``` 

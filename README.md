@@ -2,7 +2,7 @@
 
 An Open Source FAQ Board 
 
-![travis](https://travis-ci.org/levlaz/openfaqs.svg?branch=master)
+[![travis](https://travis-ci.org/levlaz/openfaqs.svg?branch=master)](https://travis-ci.org/levlaz/openfaqs)
 
 # Deployment  
 

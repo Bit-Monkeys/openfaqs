@@ -61,8 +61,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'openfaqs',
-        'USER': 'openfaqs_admin',
-        'PASSWORD': 'faterror53',
+        'USER': 'root',
+        'PASSWORD': 'usnavy06',
         'HOST': 'localhost', 
         'PORT': '3306',
     }

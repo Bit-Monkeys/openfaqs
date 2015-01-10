@@ -32,11 +32,21 @@ MySQL-python | 1.2.5
     create database openfaqs; 
     grant all on openfaqs.* to 'openfaqs_admin' identified by 'faterror53';
 
-4. Start the OpenFaqs App 
+4. Sync the DB 
 
-    python manage.py runserver 
+    python manage.py migrate 
+
+5. Create a superuser (to access /admin) 
+
+    python manage.py createsuperuser 
+
+6. Start the OpenFaqs App 
     
-5. Access it on http://localhost:8000 
+    python manage.py runserver (if testing localy) 
+
+    python manage.py runserver 0.0.0.0:8000 (if testing remotely) 
+
+7. Access it on http://localhost:8000 
 
 
 # Development  

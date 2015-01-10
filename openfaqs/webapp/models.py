@@ -1,5 +1,9 @@
 from django.db import models
 
+class Badge(models.Model):
+	Description = models.CharField(max_length=100)
+	FilePath = models.CharField(max_length=100)
+
 class User(models.Model):
 	UserName = models.CharField(max_length=50)
 	FirstName = models.CharField(max_length=50)
@@ -17,10 +21,6 @@ class UserBadge(models.Model):
 	UserID = models.ForeignKey(User)
 	BadgeID = models.ForeignKey(Badge)
 
-class Badge(models.Model):
-	Description = models.CharField(max_length=100)
-	FilePath = models.CharField(max_length=100)
-	
 class Question(models.Model):
 	UserID= models.ForeignKey(User)
 	Title = models.CharField(max_length=200)

@@ -1,9 +1,5 @@
 from django.db import models
 
-class Badge(models.Model):
-	Description = models.CharField(max_length=100)
-	FilePath = models.CharField(max_length=100)
-
 class User(models.Model):
 	UserName = models.CharField(max_length=50)
 	FirstName = models.CharField(max_length=50)
@@ -16,11 +12,10 @@ class User(models.Model):
 class UserSettings(models.Model):
 	UserID = models.ForeignKey(User)
 	isAdmin = models.BooleanField(default=False)
-		
-class UserBadge(models.Model):
-	UserID = models.ForeignKey(User)
-	BadgeID = models.ForeignKey(Badge)
 
+class Tag(models.Model):
+	Tag = models.CharField(max_length=50)	
+	
 class Question(models.Model):
 	UserID= models.ForeignKey(User)
 	Title = models.CharField(max_length=200)
@@ -48,9 +43,6 @@ class QuestionAttachment(models.Model):
 	QuestionID = models.ForeignKey(Question)
 	FilePath = models.CharField(max_length=100)
 
-class Tag(models.Model):
-	Tag = models.CharField(max_length=50)	
-
 class Answer(models.Model):
 	QuestionID = models.ForeignKey(Question)
 	UserID = models.ForeignKey(User)
@@ -74,6 +66,16 @@ class Comment(models.Model):
 	CreatedTime = models.DateTimeField()
 	ModifiedTime = models.DateTimeField()
 
+class Badge(models.Model):
+	Description = models.CharField(max_length=100)
+	FilePath = models.CharField(max_length=100)
+
+class UserBadge(models.Model):
+	UserID = models.ForeignKey(User)
+	BadgeID = models.ForeignKey(Badge)
+
 class SiteSettings(models.Model):
 	isPublic = models.BooleanField(default=True)
+
+
 	

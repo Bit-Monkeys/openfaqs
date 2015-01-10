@@ -2,6 +2,8 @@
 
 An Open Source FAQ Board 
 
+![https://travis-ci.org/levlaz/openfaqs.svg?branch=master]
+
 # Deployment  
 
 We are running our development environment on Ubuntu 14.04 LTS. 

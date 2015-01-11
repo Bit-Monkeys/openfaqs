@@ -22,7 +22,7 @@ MySQL-python | 1.2.5
 
 1. Install git, mysql-server, pip
 
-    `apt-get install git mysql-server python-pip python-dev libmysqlpython-dev`
+    `apt-get install git mysql-server python-pip python-dev libmysqlclient-dev`
 
 2. Install Python Dependencies  
 

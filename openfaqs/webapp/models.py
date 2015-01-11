@@ -74,8 +74,3 @@ class UserBadge(models.Model):
 	UserID = models.ForeignKey(User)
 	BadgeID = models.ForeignKey(Badge)
 
-class SiteSettings(models.Model):
-	isPublic = models.BooleanField(default=True)
-
-
-	

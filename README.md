@@ -2,7 +2,58 @@
 
 An Open Source FAQ Board 
 
-# development 
+# Deployment  
+
+We are running our development environment on Ubuntu 14.04 LTS. 
+
+## Software Versions 
+
+Software | Version 
+---------|---------
+Ubuntu   | 14.04 LTS 
+MySQL-Server | mysql  Ver 14.14 Distrib 5.5.40 
+Python      | 2.7.6  
+Django      | 1.7.2 
+MySQL-python | 1.2.5
+
+## Installation Instructions 
+
+1. Install git, mysql-server, pip
+
+    `apt-get install git mysql-server python-pip python-dev libmysqlclient-dev`
+
+2. Install Python Dependencies  
+
+    `pip install django MySQL-python` 
+
+3. Create openfaqs_admin user, feel free to change the password but be sure to update it in /openfaqs/openfaqs/settings.py if you do. 
+
+    ```
+    mysql -u root -p 
+    create database openfaqs; 
+    grant all on openfaqs.* to 'openfaqs_admin' identified by 'faterror53';
+    ```
+    
+4. Sync the DB 
+
+    `python manage.py migrate` 
+
+5. Create a superuser (to access /admin) 
+
+    `python manage.py createsuperuser` 
+
+6. Start the OpenFaqs App 
+    
+    ```
+    python manage.py runserver (if testing localy) 
+
+    python manage.py runserver 0.0.0.0:8000 (if testing remotely) 
+    ```
+
+7. Access it on http://localhost:8000 
+
+
+# Development  
 
 1. Fork This Repo 
 

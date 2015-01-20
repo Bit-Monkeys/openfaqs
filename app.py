@@ -1,6 +1,6 @@
 import yaml 
 
-from flask import Flask, render_template 
+from flask import Flask, render_template, Blueprint
 from models import db 
 
 # Configuration for the App 
@@ -17,9 +17,21 @@ app.config['SQLALCHEMY_DATABASE_URI'] = connection
 app.secret_key = settings['secret_key']
 db.init_app(app) 
 
+# Load Blueprints 
+from registration import registration 
+from sessions import sessions 
+
+# Register Blueprints 
+app.register_blueprint(registration)
+app.register_blueprint(sessions) 
+
 with app.app_context(): 
 	db.create_all()
 	db.session.commit() 
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 @app.route('/')
 def index(): 

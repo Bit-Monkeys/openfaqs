@@ -2,6 +2,44 @@ body {
     background: #FFFFFF; 
 }
 
-.intro {
-  padding: 26px;
+.pad26{
+    padding: 26px;
+}
+.pad10{
+    padding: 10px;
+}
+
+.pad5{
+    padding: 3px;
+}
+
+.padright{
+    position:relative;
+    left: 77%;
+}
+
+.box {
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    border-style: solid;
+    border-color: lightgrey;
+    
+}
+
+.boxnum {
+    font-size: 30px;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+
+.boxtext {
+    text-align: center;
+    font-size: 25;
+}
+
+.headerbgcolor{
+    background-color: grey;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }

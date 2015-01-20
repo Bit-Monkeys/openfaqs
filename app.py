@@ -23,7 +23,7 @@ with app.app_context():
 
 @app.route('/')
 def index(): 
-	return render_template('index.html')
+	return render_template('bootshell.htm')
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True) 

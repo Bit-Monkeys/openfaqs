@@ -17,5 +17,21 @@ function checkPass()
 			pass1div.className = 'col-xs-10 has-warning'
 			pass2div.className = 'col-xs-10 has-warning'
 			pass2help.innerHTML = "Passwords do not match."
-		}
 	}
+}
+
+function checkUsername() {
+    var username = document.getElementById("username").value
+    $.get("http://localhost:5000/ajax/checkusername", {
+        username: username
+    }, function(resp) {
+    if (resp == "False") {
+        document.getElementById('usernameDiv').className = 'col-xs-10 has-warning';
+        document.getElementById('usernamehelp').innerHTML = 'Username is not available.'
+    }
+    else {
+        document.getElementById('usernameDiv').className = 'col-xs-10 has-success';
+        document.getElementById('usernamehelp').innerHTML = 'Username is available.'
+    }
+    });
+}

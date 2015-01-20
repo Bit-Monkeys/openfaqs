@@ -20,10 +20,12 @@ db.init_app(app)
 # Load Blueprints 
 from registration import registration 
 from sessions import sessions 
+from utilities import utilities 
 
 # Register Blueprints 
 app.register_blueprint(registration)
 app.register_blueprint(sessions) 
+app.register_blueprint(utilities)
 
 with app.app_context(): 
 	db.create_all()

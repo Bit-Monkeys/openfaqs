@@ -36,7 +36,7 @@ class User(db.Model):
 	Created = db.Column(db.DateTime) 
 	Modified = db.Column(db.DateTime) 
 
-	settings = db.relationship("Settings", backref="User") 
+	settings = db.relationship("UserSettings", backref="User") 
 	questions = db.relationship("Question", backref="User") 
 	questioncomments = db.relationship("QuestionComment", backref="User")
 	questionvotes = db.relationship("QuestionVote", backref="User") 
@@ -78,8 +78,8 @@ class Question(db.Model):
 	Modified = db.Column(db.DateTime) 
 
 	comments = db.relationship("QuestionComment", backref="Question") 
-	votes = db.relationship("QuestionVotes", backref="Question")
-	attachments = db.relationship("QuestionAttachments", backref="Question")
+	votes = db.relationship("QuestionVote", backref="Question")
+	attachments = db.relationship("QuestionAttachment", backref="Question")
 	answers = db.relationship("Answer", backref="Question") 
 
 	def __init__(self, UserID, Title, QuestionText, Created, Modified): 
@@ -132,9 +132,9 @@ class Answer(db.Model):
 	Created = db.Column(db.DateTime) 
 	Modified = db.Column(db.DateTime)
 
-	votes = db.relationship("AnswerVotes", backref="Answer")
-	attachments = db.relationship("AnswerAttachments", backref="Answer") 
-	comments = db.relationship("AnswerComments", backref="Answer") 
+	votes = db.relationship("AnswerVote", backref="Answer")
+	attachments = db.relationship("AnswerAttachment", backref="Answer") 
+	comments = db.relationship("AnswerComment", backref="Answer") 
 
 	def __init__(self, QuestionID, UserID, Answer, Created, Modified): 
 		self.QuestionID = QuestionID 

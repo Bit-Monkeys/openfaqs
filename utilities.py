@@ -11,11 +11,18 @@ def hash_password(password):
 	return m.hexdigest() 
 
 # Ajaxy Things
-
 @utilities.route('/ajax/checkusername', methods=['GET'])
 def ajax_check_username(): 
 	if 'username' in request.args: 
 		check = check_username(request.args.get('username'))
+		return str(check) 
+	else: 
+		return 'error'
+
+@utilities.route('/ajax/checkemail', methods=['GET'])
+def ajax_check_email(): 
+	if 'email' in request.args: 
+		check = check_email(request.args.get('email'))
 		return str(check) 
 	else: 
 		return 'error'
@@ -27,3 +34,10 @@ def check_username(username):
         return False
     else:
         return True
+
+def check_email(email): 
+	check = User.query.filter_by(Email=email).first() 
+	if check: 
+		return False 
+	else: 
+		return True 

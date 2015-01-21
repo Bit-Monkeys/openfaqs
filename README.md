@@ -6,51 +6,38 @@ An Open Source FAQ Board
 
 We are running our development environment on Ubuntu 14.04 LTS. 
 
-## Software Versions 
-
-Software | Version 
----------|---------
-Ubuntu   | 14.04 LTS 
-MySQL-Server | mysql  Ver 14.14 Distrib 5.5.40 
-Python      | 2.7.6  
-Django      | 1.7.2 
-MySQL-python | 1.2.5
-
 ## Installation Instructions 
 
 1. Install git, mysql-server, pip
 
-    `apt-get install git mysql-server python-pip python-dev libmysqlclient-dev`
+    `apt-get install git mysql-server python-pip`
 
-2. Install Python Dependencies  
-
-    `pip install django MySQL-python` 
-
-3. Create openfaqs_admin user, feel free to change the password but be sure to update it in /openfaqs/openfaqs/settings.py if you do. 
+2. Create openfaqs_admin user, feel free to change the password but be sure to update it in /openfaqs/openfaqs/settings.py if you do. 
 
     ```
     mysql -u root -p 
     create database openfaqs; 
-    grant all on openfaqs.* to 'openfaqs_admin' identified by 'faterror53';
+    grant all on openfaqs.* to 'openfaqs' identified by 'openfaqs';
     ```
     
-4. Sync the DB 
+3. Clone this repo 
 
-    `python manage.py migrate` 
+	`git clone https://github.com/Bit-Monkeys/openfaqs.git`
+	
+4. Go into the openfaqs directiory and install Flask and dependencies 
 
-5. Create a superuser (to access /admin) 
-
-    `python manage.py createsuperuser` 
+	```
+	cd openfaqs
+	pip install -r config/requirements.txt
+	```
 
 6. Start the OpenFaqs App 
     
     ```
-    python manage.py runserver (if testing localy) 
-
-    python manage.py runserver 0.0.0.0:8000 (if testing remotely) 
+    python app.py 
     ```
 
-7. Access it on http://localhost:8000 
+7. Access it on http://localhost:5000 
 
 
 # Development  

@@ -24,6 +24,7 @@ body {
     border-radius: 20%;
     border-style: solid;
     border-color: lightgrey;
+    flex-shrink: 2;
     
 }
 

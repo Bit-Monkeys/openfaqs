@@ -19,8 +19,9 @@
                 </div>
                 <div class="form-group">
                     <label for="username" class="control-label col-xs-2">Your Email Address</label>
-                    <div class="col-xs-10">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Required" value="" required=""/>
+                    <div id="emailDiv" class="col-xs-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Required" value="" OnBlur="checkEmail()" required=""/>
+                        <span id="emailhelp" class="help-block"></span>
                     </div>
                 </div>
                 <hr/>

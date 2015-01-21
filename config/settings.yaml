@@ -1,4 +1,5 @@
 # Site Settings 
+siteUrl: http://localhost:5000
 siteName: Test Site 
 isAdmin: False
 # DB Settings 

@@ -10,7 +10,7 @@ function checkPass()
 
 		if (pass1.value == pass2.value) {
 			pass1div.className = 'col-xs-10 has-success'
-			pass2div.className = 'col-xs-10 has success'
+			pass2div.className = 'col-xs-10 has-success'
 			pass2help.innerHTML = 'Passwords match' 
 		}
 		else { 
@@ -34,4 +34,20 @@ function checkUsername() {
         document.getElementById('usernamehelp').innerHTML = 'Username is available.'
     }
     });
+}
+
+function checkEmail() { 
+	var email = document.getElementById("email").value
+	$.get("http://localhost:5000/ajax/checkemail", {
+		email: email 
+	}, function(resp) {
+	if (resp == "False") {
+		document.getElementById('emailDiv').className = 'col-xs-10 has-warning';
+		document.getElementById('emailhelp').innerHTML = 'Email address is already taken. Did you <a href="/forgot"> Forget your Password? </a>'
+	}
+	else {
+		document.getElementById('emailDiv').className = 'col-xs-10 has-success';
+		document.getElementById('emailhelp').innerHTML = 'Email address is available'
+	}
+	}); 
 }

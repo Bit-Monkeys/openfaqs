@@ -22,7 +22,7 @@ function checkPass()
 
 function checkUsername() {
     var username = document.getElementById("username").value
-    $.get("http://localhost:5000/ajax/checkusername", {
+    $.get(getBaseUrl() + "ajax/checkusername", {
         username: username
     }, function(resp) {
     if (resp == "False") {
@@ -38,7 +38,7 @@ function checkUsername() {
 
 function checkEmail() { 
 	var email = document.getElementById("email").value
-	$.get("http://localhost:5000/ajax/checkemail", {
+	$.get(getBaseUrl() + "ajax/checkemail", {
 		email: email 
 	}, function(resp) {
 	if (resp == "False") {
@@ -50,4 +50,9 @@ function checkEmail() {
 		document.getElementById('emailhelp').innerHTML = 'Email address is available'
 	}
 	}); 
+}
+
+function getBaseUrl() {
+    var re = new RegExp(/^.*\//);
+    return re.exec(window.location.href);
 }

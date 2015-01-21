@@ -1,9 +1,9 @@
 body { 
-    background: #FFFFFF; 
+    background: white;
 }
 
-.pad26{
-    padding: 26px;
+.pad25{
+    padding: 25px;
 }
 .pad10{
     padding: 10px;
@@ -19,24 +19,24 @@ body {
 }
 
 .box {
-    width: 70px;
-    height: 70px;
+    width: 110%;
+    height: 110%;
     border-radius: 20%;
-    border-style: solid;
+    #border-style: solid;
     border-color: lightgrey;
     flex-shrink: 2;
     
 }
 
 .boxnum {
-    font-size: 30px;
+    font-size: 225%;
     text-align: center;
     vertical-align: text-bottom;
 }
 
 .boxtext {
     text-align: center;
-    font-size: 25;
+    font-size: 90%;
 }
 
 .headerbgcolor{

@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, render_template, request 
 from models import db, User 
 from sessions import login 
 from utilities import hash_password
@@ -14,20 +14,19 @@ def register():
 		password = hash_password(request.form['password']) 
 
 		new_user = User(request.form['firstname'],
-			request.form['lastname'], 
+			request.form['firstname'], 
 			request.form['username'], 
 			request.form['email'], 
 			password, 
 			datetime.datetime.now(), 
-			datetime.datetime.now(), 
-			True)
+			datetime.datetime.now())
 
 		db.session.add(new_user)
 		db.session.commit() 
 
 		login()
 
-		return render_template('dashboard.html') 	
+		return render_template('index.html') 	
 
 	else: 
 		return render_template('register.html') 

@@ -3,3 +3,4 @@ flask-sqlalchemy
 mysql-python
 sqlalchemy
 hashlib
+pyyaml

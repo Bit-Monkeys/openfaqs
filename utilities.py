@@ -6,9 +6,9 @@ utilities = Blueprint('utilities', __name__, template_folder='templates')
 
 def hash_password(password):
     m = hashlib.sha256()
-	m.update(password) 
-	m.update("6gwxK6VMR3MZV7AnD6ZgsRtKvQHtWo")
-	return m.hexdigest() 
+    m.update(password)
+    m.update("6gwxK6VMR3MZV7AnD6ZgsRtKvQHtWo")
+    return m.hexdigest() 
 
 # Ajaxy Things
 @utilities.route('/ajax/checkusername', methods=['GET'])

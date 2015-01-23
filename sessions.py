@@ -20,9 +20,9 @@ def login():
 			password=password_hashed).first() 
 
 		if find_user: 
-			session['user_id'] = find_user.id 
-			session['username'] = find_user.username 
-			session['email'] = find_user.email
+			session['user_id'] = find_user.ID 
+			session['username'] = find_user.UserName 
+			session['email'] = find_user.Email 
 			
 			return redirect('/dashboard') 
 

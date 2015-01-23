@@ -1,4 +1,4 @@
-from flask import Blueprint 
+from flask import Blueprint, request, session, redirect 
 from models import User 
 from utilities import hash_password
 
@@ -16,8 +16,8 @@ def login():
 	if request.method == 'POST': 
 
 		password_hashed = hash_password(request.form['password']) 
-		find_user = User.query.filter_by(username=request.form['username'],
-			password=password_hashed).first() 
+		find_user = User.query.filter_by(UserName=request.form['username'],
+			Password=password_hashed).first() 
 
 		if find_user: 
 			session['user_id'] = find_user.ID 

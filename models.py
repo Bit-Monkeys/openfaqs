@@ -3,7 +3,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 db = SQLAlchemy() 
 
 # Assocaition Tables 
-QuestionTag = db.Table(
+question_tag = db.Table(
 	'QuestionTag', 
 	db.Column(
 		'QuestionID', 
@@ -14,7 +14,7 @@ QuestionTag = db.Table(
 		db.Integer, 
 		db.ForeignKey('tag.ID', ondelete="CASCADE")))
 
-UserBadge = db.Table(
+user_badge = db.Table(
 	'UserBadge', 
 	db.Column(
 		'UserID', 

@@ -1,11 +1,11 @@
 from flask import Blueprint, request 
 from models import User, db 
-import md5 
+import hashlib
 
 utilities = Blueprint('utilities', __name__, template_folder='templates')
 
-def hash_password(password): 
-	m = md5.new() 
+def hash_password(password):
+    m = hashlib.sha256()
 	m.update(password) 
 	m.update("6gwxK6VMR3MZV7AnD6ZgsRtKvQHtWo")
 	return m.hexdigest() 

@@ -10,7 +10,7 @@ We are running our development environment on Ubuntu 14.04 LTS.
 
 1. Install git, mysql-server, pip
 
-    `apt-get install git mysql-server python-pip`
+    `apt-get install git mysql-server python-pip python-dev libmysqlclient-dev`
 
 2. Create openfaqs_admin user, feel free to change the password but be sure to update it in /openfaqs/openfaqs/settings.py if you do. 
 

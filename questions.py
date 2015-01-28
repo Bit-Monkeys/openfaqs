@@ -6,7 +6,7 @@ questions = Blueprint('questions', __name__, template_folder='templates')
 
 @questions.route('/questions')  
 def show_question(): 
-	questions = Question.query.all() 
+	questions = Question.query.order_by(Question.Created.desc()).all() 
 
 	return render_template('questions.html', questions=questions)
 

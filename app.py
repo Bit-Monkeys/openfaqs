@@ -21,11 +21,15 @@ db.init_app(app)
 from registration import registration 
 from sessions import sessions 
 from utilities import utilities 
+from ask import ask 
+from questions import questions
 
 # Register Blueprints 
 app.register_blueprint(registration)
 app.register_blueprint(sessions) 
 app.register_blueprint(utilities)
+app.register_blueprint(ask) 
+app.register_blueprint(questions)
 
 with app.app_context(): 
 	db.create_all()

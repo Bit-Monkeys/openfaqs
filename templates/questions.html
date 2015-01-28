@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+
+<br />
+<br />
+<br />
+
+<h1> These are all the Questions </h1> 
+
+{% for question in questions %}
+
+<h2> {{ question.Title }} </h2>
+
+<p> {{ question.QuestionText }} </p>
+
+{% endfor %}
+
+{% include 'footer.html' %}

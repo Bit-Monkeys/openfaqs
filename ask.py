@@ -1,4 +1,4 @@
-from flask import render_template, request, Blueprint, session, redirect 
+from flask import render_template, request, Blueprint, session, redirect, url_for 
 from models import Question, db 
 import datetime 
 
@@ -18,7 +18,7 @@ def ask_question():
 
 		question_id = get_question_id(new_question, db)
 
-		return redirect('/questions')
+		return redirect(url_for('questions.show_question', question_id=question_id))
 
 	elif request.method == 'GET': 
 		return render_template('ask.html')

@@ -66,6 +66,8 @@ class Tag(db.Model):
 	ID = db.Column(db.Integer, primary_key=True) 
 	Tag = db.Column(db.String(100))
 
+	questions = db.relationship("Question", secondary=question_tag, backref="Tag")
+
 	def __init__(self, Tag): 
 		self.Tag = Tag 
 
@@ -81,6 +83,7 @@ class Question(db.Model):
 	votes = db.relationship("QuestionVote", backref="Question")
 	attachments = db.relationship("QuestionAttachment", backref="Question")
 	answers = db.relationship("Answer", backref="Question") 
+	tags = db.relationship("Tag", secondary=question_tag, backref="Question")
 
 	def __init__(self, UserID, Title, QuestionText, Created, Modified): 
 		self.UserID = UserID 

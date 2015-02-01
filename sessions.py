@@ -15,8 +15,8 @@ def check_login():
 def login(): 
 	if request.method == 'POST': 
 
-		password_hashed = hash_password(request.form['Password']) 
-		find_user = User.query.filter_by(UserName=request.form['UserName'],
+		password_hashed = hash_password(request.form['password']) 
+		find_user = User.query.filter_by(UserName=request.form['username'],
 			Password=password_hashed).first() 
 
 		if find_user: 

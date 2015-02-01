@@ -1,19 +1,15 @@
-from flask import render_template, request 
+from flask import render_template, request, Blueprint, session, redirect, url_for 
 from models import Question, db 
 import datetime 
 
 ask = Blueprint('ask', __name__, template_folder='templates') 
 
-@app.route('/ask')
-def ask(): 
-	return render_template('ask.html')
-
-@app.route('/ask/submit' methods=['GET', 'POST'])  
-def ask_submit(): 
+@ask.route('/ask', methods=['GET', 'POST'])  
+def ask_question(): 
 	if request.method == 'POST': 
-		new_question = Question(session['user_id'],
-			request.form['title'],
-			request.form['question_text'], 
+		new_question = Question(session['UserID'],
+			request.form['QuestionTitle'],
+			request.form['Question'], 
 			datetime.datetime.now(), 
 			datetime.datetime.now())
 
@@ -22,10 +18,14 @@ def ask_submit():
 
 		question_id = get_question_id(new_question, db)
 
-		return render_template('questions.html', question=question_id)
+		return redirect(url_for('questions.show_question', question_id=question_id))
+
+	elif request.method == 'GET': 
+		return render_template('ask.html')
+
 
 # Helper Functions 
 
 def get_question_id(record, db): 
 	db.session.refresh(record)
-	return record.id 
+	return record.ID

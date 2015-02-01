@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+
+<br />
+<br />
+<br />
+
+<form method="post" action="ask"> 
+	<div class="form-group">
+		<label for="QuestionTitle"> Title </label>
+		<input type="title" class="form-control" id="QuestionTitle" name="QuestionTitle" placeholder="Enter Question Title">
+	</div>
+	<div class="form-group">
+		<label for"Question"> Question </label>
+		<textarea class="form-control" rows="5" id="Question" name="Question"placeholder="Enter Question"></textarea>
+	</div>
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% include 'footer.html' %}

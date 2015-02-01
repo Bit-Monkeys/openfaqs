@@ -1,7 +1,8 @@
 import yaml 
 
-from flask import Flask, render_template, Blueprint
-from models import db 
+from flask import Flask, render_template, request, Blueprint, session
+from models import User, Tag, Question, db 
+import datetime 
 
 # Configuration for the App 
 
@@ -39,9 +40,27 @@ with app.app_context():
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.route('/')
-def index(): 
-	return render_template('index.html')
+@app.route('/')  
+def show_all_questions(): 
+	questions = Question.query.order_by(Question.Created.desc()).all() 
+	questionList = [] 
+
+	for question in questions: 
+		user = User.query.filter_by(ID = question.UserID).first() 
+
+		question = { 
+			'UserName': user.UserName,
+			'Title': question.Title, 
+			'Question' : question.QuestionText,
+			'Date' : question.Created, 
+			'Tags' : question.tags, 
+			'Votes' : "10", 
+			'Answers' : "10", 
+			'Views' : "100" 
+		}
+		questionList.append(question)  
+
+	return render_template('index.html', questions=questionList)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', debug=True) 

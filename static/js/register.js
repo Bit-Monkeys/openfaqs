@@ -9,13 +9,13 @@ function checkPass()
 		var pass2help = document.getElementById('password2help') 
 
 		if (pass1.value == pass2.value) {
-			pass1div.className = 'col-xs-10 has-success'
-			pass2div.className = 'col-xs-10 has-success'
+			pass1div.className = 'col-sm-8 has-success'
+			pass2div.className = 'col-sm-8 has-success'
 			pass2help.innerHTML = 'Passwords match' 
 		}
 		else { 
-			pass1div.className = 'col-xs-10 has-warning'
-			pass2div.className = 'col-xs-10 has-warning'
+			pass1div.className = 'col-sm-8 has-warning'
+			pass2div.className = 'col-sm-8 has-warning'
 			pass2help.innerHTML = "Passwords do not match."
 	}
 }
@@ -26,11 +26,11 @@ function checkUsername() {
         username: username
     }, function(resp) {
     if (resp == "False") {
-        document.getElementById('usernameDiv').className = 'col-xs-10 has-warning';
+        document.getElementById('usernameDiv').className = 'col-sm-8 has-warning';
         document.getElementById('usernamehelp').innerHTML = 'Username is not available.'
     }
     else {
-        document.getElementById('usernameDiv').className = 'col-xs-10 has-success';
+        document.getElementById('usernameDiv').className = 'col-sm-8 has-success';
         document.getElementById('usernamehelp').innerHTML = 'Username is available.'
     }
     });
@@ -42,11 +42,11 @@ function checkEmail() {
 		email: email 
 	}, function(resp) {
 	if (resp == "False") {
-		document.getElementById('emailDiv').className = 'col-xs-10 has-warning';
+		document.getElementById('emailDiv').className = 'col-sm-8 has-warning';
 		document.getElementById('emailhelp').innerHTML = 'Email address is already taken. Did you <a href="/forgot"> Forget your Password? </a>'
 	}
 	else {
-		document.getElementById('emailDiv').className = 'col-xs-10 has-success';
+		document.getElementById('emailDiv').className = 'col-sm-8 has-success';
 		document.getElementById('emailhelp').innerHTML = 'Email address is available'
 	}
 	}); 

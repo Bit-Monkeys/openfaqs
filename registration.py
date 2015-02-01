@@ -14,7 +14,7 @@ def register():
 		password = hash_password(request.form['password']) 
 
 		new_user = User(request.form['firstname'],
-			request.form['firstname'], 
+			request.form['lastname'], 
 			request.form['username'], 
 			request.form['email'], 
 			password, 

@@ -1,36 +1,36 @@
-<!----------------------------------------------------->
-<!- Calls javascript for signup page from register.js ->
-<!- Handles form validation checks.                   ->
-<!----------------------------------------------------->
+<!------------------------------------------------------->
+<!-- Calls javascript for signup page from register.js -->
+<!-- Handles form validation checks.                   -->
+<!------------------------------------------------------->
 <script src="/static/js/register.js"></script>
 
-<!----------------------------------------------------->
-<!- This section is created in a panel.  This section ->
-<!- generates the panel header and the x that closes  ->
-<!- the modal.                                        ->
-<!----------------------------------------------------->
+<!------------------------------------------------------->
+<!-- This section is created in a panel.  This section -->
+<!-- generates the panel header and the x that closes  -->
+<!-- the modal.                                        -->
+<!------------------------------------------------------->
 <div class="panel panel-default">
     <div class="panel-heading">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="panel-title text-center">Sign Up for OpenFAQS</h3>
     </div>
 
-    <!----------------------------------------------------->
-    <!- This generates the panel body which conatins the  ->
-    <!- First Name, Last Name, E-mail, Username, Password,->
-    <!- forms.  Also conatins the submit and close button ->
-    <!----------------------------------------------------->
+    <!------------------------------------------------------->
+    <!-- This generates the panel body which conatins the  -->
+    <!-- First Name, Last Name, E-mail, Username, Password,-->
+    <!-- forms.  Also conatins the submit and close button -->
+    <!------------------------------------------------------->
     <div class="panel-body">
     
-        <!------------------------------------------------------->
-        <!- Start of form.  Action sends POST data to /register ->
-        <!- listener in registration.py                         ->
-        <!------------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!-- Start of form.  Action sends POST data to /register -->
+        <!-- listener in registration.py                         -->
+        <!--------------------------------------------------------->
         <form class="form-horizontal" method="post" action="register">
           
-            <!------------------------------------------------------->
-            <!- First Name || ID: firstname NAME: firstname         ->
-            <!------------------------------------------------------->
+            <!--------------------------------------------------------->
+            <!-- First Name || ID: firstname NAME: firstname         -->
+            <!--------------------------------------------------------->
             <div class="form-group">
                 <label  class="col-sm-3 control-label">First Name</label>
                 <div class="col-sm-8">
@@ -38,9 +38,9 @@
                 </div>
             </div>
           
-            <!------------------------------------------------------->
-            <!- Last Name || ID: lastname NAME: lastname            ->
-            <!------------------------------------------------------->
+            <!--------------------------------------------------------->
+            <!-- Last Name || ID: lastname NAME: lastname            -->
+            <!--------------------------------------------------------->
             <div class="form-group">
                 <label  class="col-sm-3 control-label">Last Name</label>
                 <div class="col-sm-8">
@@ -48,9 +48,9 @@
                 </div>
             </div>
         
-            <!------------------------------------------------------->
-            <!- E-Mail || ID: email NAME: email                     ->
-            <!------------------------------------------------------->
+            <!--------------------------------------------------------->
+            <!-- E-Mail || ID: email NAME: email                     -->
+            <!--------------------------------------------------------->
             <div class="form-group">  
                 <label for="email" class="col-sm-3 control-label">Email</label>
                 <div id="emailDiv" class="col-sm-8">
@@ -61,9 +61,9 @@
 
             <hr>
         
-           <!------------------------------------------------------->
-            <!- Username || ID: username NAME: username            ->
-            <!------------------------------------------------------>
+           <!--------------------------------------------------------->
+            <!-- Username || ID: username NAME: username            -->
+            <!-------------------------------------------------------->
             <div class="form-group">  
                 <label for="username" class="col-sm-3 control-label">Username</label>
                 <div id="usernameDiv" class="col-sm-8">
@@ -72,9 +72,9 @@
                 </div>
             </div>
         
-            <!------------------------------------------------------->
-            <!- Password || ID: password1  NAME: password           ->
-            <!------------------------------------------------------->
+            <!--------------------------------------------------------->
+            <!-- Password || ID: password1  NAME: password           -->
+            <!--------------------------------------------------------->
             <div class="form-group">  
                 <label for="password1" class="col-sm-3 control-label">Password</label>
                 <div id="passwordDiv1" class="col-sm-8">
@@ -82,9 +82,9 @@
                 </div>
             </div>
         
-            <!------------------------------------------------------->
-            <!- Confirm Password || ID: password2                   ->
-            <!------------------------------------------------------->
+            <!--------------------------------------------------------->
+            <!-- Confirm Password || ID: password2                   -->
+            <!--------------------------------------------------------->
             <div class="form-group">  
                 <label for="password2" class="col-sm-3 control-label">Confirm Password</label>
                 <div id="passwordDiv2" class="col-sm-8">
@@ -93,9 +93,9 @@
                 </div>
             </div>
     
-            <!--------------------------->
-            <!- Back and Submit Buttons ->
-            <!--------------------------->
+            <!----------------------------->
+            <!-- Back and Submit Buttons -->
+            <!----------------------------->
             <div class="row">
                 <div class="col-sm-offset-9">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Back</button>

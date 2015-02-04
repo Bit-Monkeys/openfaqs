@@ -2,7 +2,6 @@ from flask import render_template, request, Blueprint, session
 from models import User, Tag, Question, db 
 import datetime 
 
-
 questions = Blueprint('questions', __name__, template_folder='templates') 
 
 @questions.route('/questions/<question_id>')

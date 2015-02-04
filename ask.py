@@ -1,10 +1,13 @@
 from flask import render_template, request, Blueprint, session, redirect, url_for 
 from models import Question, db 
+from utilities import login_required
+
 import datetime 
 
 ask = Blueprint('ask', __name__, template_folder='templates') 
 
 @ask.route('/ask', methods=['GET', 'POST'])  
+@login_required
 def ask_question(): 
 	if request.method == 'POST': 
 		new_question = Question(session['UserID'],

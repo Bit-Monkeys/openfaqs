@@ -1,4 +1,4 @@
-from flask import Blueprint, request 
+from flask import Blueprint, request, redirect 
 from models import User, db 
 from functools import wraps, update_wrapper
 
@@ -19,6 +19,7 @@ def login_required(f):
 def hash_password(password):
     m = hashlib.sha256()
     m.update(password)
+    # TODO: This is totally our salt dont forget to change this jenk before sending the app to production. :) 
     m.update("6gwxK6VMR3MZV7AnD6ZgsRtKvQHtWo")
     return m.hexdigest() 
 

@@ -7,6 +7,7 @@ utilities = Blueprint('utilities', __name__, template_folder='templates')
 def hash_password(password):
     m = hashlib.sha256()
     m.update(password)
+    # TODO: This is totally our salt dont forget to change this jenk before sending the app to production. :) 
     m.update("6gwxK6VMR3MZV7AnD6ZgsRtKvQHtWo")
     return m.hexdigest() 
 

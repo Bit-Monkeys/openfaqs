@@ -8,6 +8,10 @@ We are running our development environment on Ubuntu 14.04 LTS.
 
 ## Installation Instructions 
 
+### Shared Development Database 
+
+We have a public shared dev database with "real" data in it, if you wish to get access to this DB please let @levlaz know. This makes it a bit easier to see the app in action and work from a common data set. 
+
 1. Install git, mysql-server, pip
 
     `apt-get install git mysql-server python-pip python-dev libmysqlclient-dev`

@@ -1,4 +1,4 @@
-from flask import Blueprint, request 
+from flask import Blueprint, request, redirect 
 from models import User, db 
 from functools import wraps, update_wrapper
 

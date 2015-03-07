@@ -1,6 +1,6 @@
 import yaml 
 
-from flask import Flask, render_template, request, Blueprint, session
+from flask import Flask, render_template, request, Blueprint, session, redirect
 from models import User, Tag, Question, db 
 import datetime 
 

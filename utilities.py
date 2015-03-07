@@ -1,8 +1,20 @@
 from flask import Blueprint, request 
 from models import User, db 
+from functools import wraps, update_wrapper
+
 import hashlib
 
 utilities = Blueprint('utilities', __name__, template_folder='templates')
+
+def login_required(f):
+    @wraps(f)
+    def decorator(*args, **kwargs):
+        try:
+            session['Username']
+        except:
+            return redirect('/login')
+        return f(*args, **kwargs)
+    return decorator
 
 def hash_password(password):
     m = hashlib.sha256()

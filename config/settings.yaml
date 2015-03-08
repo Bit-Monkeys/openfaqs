@@ -1,0 +1,12 @@
+# Site Settings 
+siteUrl: http://localhost:5000
+siteName: Test Site 
+isAdmin: False
+# DB Settings 
+hostname: localhost 
+port: 3306 
+database: openfaqs
+username: openfaqs 
+password: openfaqs
+# Application Settings 
+secret_key: L\x8e\xa9/\n=\x14\x100&\xfb\x17z#\x15[\xc1\x85\x08\xd1\x95\x97-Ww\x0c\x161\xb5\x82

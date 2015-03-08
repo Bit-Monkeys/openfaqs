@@ -4,16 +4,24 @@
 <br />
 <br />
 
+<div class="container">
 <form method="post" action="ask"> 
 	<div class="form-group">
-		<label for="QuestionTitle"> Title </label>
-		<input type="title" class="form-control" id="QuestionTitle" name="QuestionTitle" placeholder="Enter Question Title">
+		<label for="QuestionTitle"> TITLE </label>
+		<input type="title" class="form-control" id="QuestionTitle" name="QuestionTitle" placeholder="Enter Question Title (Required)">
 	</div>
 	<div class="form-group">
-		<label for"Question"> Question </label>
-		<textarea class="form-control" rows="5" id="Question" name="Question"placeholder="Enter Question"></textarea>
+		<label for="Question"> QUESTION </label>
+		<textarea class="form-control" rows="5" id="Question" name="Question"placeholder="Enter Question (Required)"></textarea>
 	</div>
+	<div class="form-group">
+		<label for="Tags"> TAGS </label>
+		<div class="form-group">
+		<input type="text" class="form-control" placeholder="Enter Tags (Optional)" data-role="tagsinput" >
+		</div>
+
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
+</div>
 
 {% include 'footer.html' %}

@@ -31,7 +31,7 @@ def login():
 			return render_template('error.html', error="Invalid credentials, please try again.") 
 
 	else: 
-		return render_template('loginmodal.html') 
+		return render_template('login.html') 
 
 @sessions.route('/logout', methods=['GET'])
 def logout(): 

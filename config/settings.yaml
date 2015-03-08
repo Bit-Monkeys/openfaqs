@@ -7,6 +7,6 @@ hostname: dev.levlaz.org
 port: 3306 
 database: openfaqs
 username: openfaqs 
-password: kudQYstnHoeMeQxMTweoAAncJpDUMoKv4gqyqGsqjYV8xLvTxU
+password: VLYYF7rBjyAZopFhCeEZtsowoUeosCx9QWspaFnWmsohbzWAcB
 # Application Settings 
 secret_key: L\x8e\xa9/\n=\x14\x100&\xfb\x17z#\x15[\xc1\x85\x08\xd1\x95\x97-Ww\x0c\x161\xb5\x82

@@ -7,7 +7,7 @@ import datetime
 ask = Blueprint('ask', __name__, template_folder='templates') 
 
 @ask.route('/ask', methods=['GET', 'POST'])  
-@login_required
+#@login_required
 def ask_question(): 
 	if request.method == 'POST': 
 		new_question = Question(session['UserID'],

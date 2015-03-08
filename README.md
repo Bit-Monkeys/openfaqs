@@ -1,6 +1,6 @@
 # openfaqs
 
-An Open Source FAQ Board 
+An Open Source QA Board 
 
 # Deployment  
 
